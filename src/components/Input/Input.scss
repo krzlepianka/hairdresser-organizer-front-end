@@ -1,0 +1,77 @@
+@import '../../styles/mixins/input.scss';
+@import '../../styles/mixins/abstract.scss';
+@import '../../styles/variable/colors.scss';
+@import '../../styles/variable/fonts.scss';
+@import '../../styles/variable/abstract.scss';
+@import '../../styles/variable/borders.scss';
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type='login'],
+  input[type='email'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+
+.input {
+    &--primary {
+    @include input(
+      27rem,
+      3rem,
+      center,
+      1rem
+    )
+  }
+    &--secondary {
+      @include input(
+        27rem,
+        3rem,
+        center,
+        0rem
+      );
+      border-width: 0 0 .1rem 0;
+      border-color: $secondary-color;
+      border-style: solid;
+      border-radius: 0;
+    }
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+   /* Chrome/Opera/Safari */
+  &::-webkit-input-placeholder { 
+    font-size: $medium-font;
+    font-family: $primary-font;
+    text-align: $text-align-center;
+  }
+  /* Firefox 19+ */
+  ::-moz-placeholder { 
+    font-size: $medium-font;
+    font-family: $primary-font;
+    text-align: $text-align-center;
+  }
+  /* IE 10+ */
+  :-ms-input-placeholder { 
+    font-size: $medium-font;
+    font-family: $primary-font;
+    text-align: $text-align-center;
+  }
+  /* Firefox 18- */
+  :-moz-placeholder { 
+    font-size: $medium-font;
+    font-family: $primary-font;
+    text-align: $text-align-center;
+  }
+  &input:focus {
+    @include box-shadow(0px, 0px, 11px, $white-color)
+  }
+}
+
+.label {
+  &--primary {
+    font-family: $primary-font;
+    font-size: $medium-font;
+    padding: $small-padding $no-padding $small-padding $no-padding;
+    color: $white-color;
+  }
+}

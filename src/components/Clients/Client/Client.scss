@@ -1,0 +1,37 @@
+.client {
+    justify-self: center;
+    width: 25rem;
+    height: 15rem;
+    background-color: #FFF;
+    border-radius: 1rem;
+    box-shadow: 0px 6.6px 6.6px rgba(0, 0, 0, 0.25);
+    
+}
+
+.title {
+    height: 5rem;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    line-height: .5;
+    background: linear-gradient(
+        269.51deg, 
+        rgba(63, 15, 254, 0.51) 18.54%,
+        rgba(210, 41, 238, 0.51) 76.9%
+    );
+    color: #FFF;
+    border-radius: 1rem 1rem 0em 0rem;
+}
+
+.phone {
+   text-align: center; 
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+};
+
+button {
+    margin-right: 1rem;
+}

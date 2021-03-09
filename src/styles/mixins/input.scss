@@ -1,0 +1,14 @@
+@mixin input(
+        $width,
+        $height,
+        $text-align,
+        $padding,
+    ) {
+        outline: none;
+        border-radius: 1rem;
+        border: 0;
+        width: $width;
+        height: $height;
+        text-align: $text-align;
+        padding: $padding;
+    }

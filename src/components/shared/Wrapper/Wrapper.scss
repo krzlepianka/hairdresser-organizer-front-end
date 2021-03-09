@@ -1,0 +1,26 @@
+.wrapper {
+    &--login {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(to right, #ff00cc, #333399);
+    }
+    &--dashboard {
+        width: 100%;
+        height: 100vh;
+        background-image: #FFF;
+    }
+    &--client-details {
+        width: 100%;
+        height: 100vh;
+        background-image: #FFF;
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        grid-template-rows: 100%;
+        grid-gap: 5rem;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

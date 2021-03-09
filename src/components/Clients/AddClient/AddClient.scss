@@ -1,0 +1,17 @@
+@import '../../../styles/variable/colors.scss';
+@import '../../../styles/variable/fonts.scss';
+@import '../../../styles/variable/abstract.scss';
+@import '../../../styles/variable/borders.scss';
+
+.form {
+    &--primary {
+      width: 40rem;
+      height: 45rem;
+      border-radius: $small-border-radius;
+      box-shadow: -3px 1px 24px 7px $white-color;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+}

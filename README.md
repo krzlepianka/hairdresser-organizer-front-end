@@ -9,5 +9,5 @@ The concept behind this application is to create tool that allows hairdressers m
 ## How to use?
 1. Clone project
 2. install all dependecies by command "npm i"
-3. Start mock database by command "json-server --watch db.json --port 8000" ----> more information about this package https://www.npmjs.com/package/json-server
+3. Start mock database by command "json-server --watch db.json --port 9090" ----> more information about this package https://www.npmjs.com/package/json-server
 4. Start React application by command "npm start"

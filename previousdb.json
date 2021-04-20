@@ -1,0 +1,49 @@
+{
+    "clients": [
+        {
+            "id": 1,
+            "firstName": "Anna",
+            "lastName": "MARYJEKNA",
+            "phoneNumber": 500660055,
+            "visits": [
+                {
+                    "id": 1,
+                    "title": "odnowa",
+                    "description": "lorem ipsum sadadadasd",
+                    "date": "15-02-2021",
+                    "gallery": [
+                        "https://www.9and10news.com/content/uploads/2018/11/hair.png",
+                        "https://www.elle.pl/media/cache/default_view_amp/uploads/media/default/0005/70/974d787b383c7fe39d6bd2937f139773bfd28986.jpg",
+                        "https://post.healthline.com/wp-content/uploads/2020/08/woman_straight_hair-732x549-thumbnail-732x549.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "firstName": "Anna",
+            "lastName": "MARYJEKNA1",
+            "phoneNumber": 500660055,
+            "visits": [
+                {
+                    "id": 1,
+                    "title": "odnowa",
+                    "description": "lorem ipsum sadadadasd",
+                    "date": "15-02-2021",
+                    "gallery": [
+                        "https://www.9and10news.com/content/uploads/2018/11/hair.png",
+                        "https://www.elle.pl/media/cache/default_view_amp/uploads/media/default/0005/70/974d787b383c7fe39d6bd2937f139773bfd28986.jpg",
+                        "https://post.healthline.com/wp-content/uploads/2020/08/woman_straight_hair-732x549-thumbnail-732x549.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "81c734c-b364-ae65-ea24-a282ad75bca",
+            "firstName": "KRZYSZTOF",
+            "lastName": "LEPIANKA",
+            "phoneNumber": "796638604",
+            "visits": []
+        }
+    ]
+}

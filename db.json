@@ -1,53 +1,48 @@
 {
-    "clients": [
-        {
-            "id": 1,
-            "firstName": "Anna",
-            "lastName": "Maria",
-            "phoneNumber": 796638604,
-            "visits": [
-                {
-                    "id": 1,
-                    "title": "keratyna",
-                    "description": "lorem ipsum",
-                    "date": "15-02-2021",
-                    "gallery": [
-                        "https://www.9and10news.com/content/uploads/2018/11/hair.png",
-                        "https://www.elle.pl/media/cache/default_view_amp/uploads/media/default/0005/70/974d787b383c7fe39d6bd2937f139773bfd28986.jpg",
-                        "https://cdn.moment.pl/gallery_items/313687/image_1000_1000/IMG_20200620_142147_352.jpg?1594280335"
-                    ]
-                },
-                {
-                    "id": 2,
-                    "title": "koloryzacja na burgunt",
-                    "description": " burgundowe marzenia o włosach",
-                    "date": "27-02-2021",
-                    "gallery": [
-                        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-501365101-1561660367.jpg",
-                        "https://www.elle.pl/media/cache/default_view_amp/uploads/media/default/0005/70/974d787b383c7fe39d6bd2937f139773bfd28986.jpg",
-                        "https://cdn.moment.pl/gallery_items/313687/image_1000_1000/IMG_20200620_142147_352.jpg?1594280335"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "firstName": "Ewa",
-            "lastName": "Woźniak",
-            "phoneNumber": 500660055,
-            "visits": [
-                {
-                    "id": 1,
-                    "title": "odnowa",
-                    "description": "lorem ipsum sadadadasd",
-                    "date": "15-02-2021",
-                    "gallery": [
-                        "https://www.9and10news.com/content/uploads/2018/11/hair.png",
-                        "https://www.elle.pl/media/cache/default_view_amp/uploads/media/default/0005/70/974d787b383c7fe39d6bd2937f139773bfd28986.jpg",
-                        "https://cdn.moment.pl/gallery_items/313687/image_1000_1000/IMG_20200620_142147_352.jpg?1594280335"
-                    ]
-                }
-            ]
-        }
-    ]
+  "clients": [
+    {
+      "id": 1,
+      "firstName": "Anna",
+      "lastName": "MARYJEKNA",
+      "phoneNumber": 500660055
+    },
+    {
+      "id": "fb786cd-5be8-b62e-a182-570ea4f31b30",
+      "firstName": "KRZYSZTOF",
+      "lastName": "LEPIANKA",
+      "phoneNumber": "796638604"
+    },
+    {
+      "id": "baa761-ccfc-e67f-7104-f507cf0ccf14",
+      "firstName": "KRZYSZTOF1",
+      "lastName": "LEPIANKA1",
+      "phoneNumber": "7966386043231"
+    }
+  ],
+  "visits": [
+    {
+      "id": 1,
+      "title": "odnowa",
+      "description": "lorem ipsum sadadadasd",
+      "date": "15-02-2021",
+      "clientId": 1
+    }
+  ],
+  "gallery": [
+    {
+      "id": 1,
+      "image": "https://www.9and10news.com/content/uploads/2018/11/hair.png",
+      "visitId": 1
+    },
+    {
+      "id": 2,
+      "image": "https://www.elle.pl/media/cache/default_view_amp/uploads/media/default/0005/70/974d787b383c7fe39d6bd2937f139773bfd28986.jpg",
+      "visitId": 1
+    },
+    {
+      "id": 3,
+      "image": "https://post.healthline.com/wp-content/uploads/2020/08/woman_straight_hair-732x549-thumbnail-732x549.jpg",
+      "visitId": 1
+    }
+  ]
 }

@@ -8,6 +8,12 @@ const validationSchema = {
             capitalLetter: (value) => /[A-Z]/.test(value),
             oneNumber: (value) => /[0-9]/.test(value),
             minLength: (value) => (value.length > 5)
+        },
+        fullName: {
+            minLength: (value) => (value.length > 5)
+        },
+        phoneNumber: {
+            onlyNumbers: (value) => /^[0-9]*$/.test(value)
         }
     }
 };

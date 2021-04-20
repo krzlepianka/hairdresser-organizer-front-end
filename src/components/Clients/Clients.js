@@ -11,11 +11,13 @@ import Client from '../Clients/Client/Client';
 import './Clients.scss';
 
 
-const Clients = ({ clients }) => {
-
+const Clients = ({ clients, deleteClient }) => {
+    if (!clients) {
+        return <div>loading</div>
+    }
     return (
         <div className="clients">
-            {clients.map((client, id) => <Client key={id} id={client.id} client={client} />)}
+            {clients.map((client, id) => <Client key={id} id={client.id} client={client} deleteClient={deleteClient} />)}
         </div >
     );
 }

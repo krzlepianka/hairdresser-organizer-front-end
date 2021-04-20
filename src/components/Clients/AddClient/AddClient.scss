@@ -5,6 +5,7 @@
 
 .form {
     &--primary {
+      position: relative;
       width: 40rem;
       height: 45rem;
       border-radius: $small-border-radius;
@@ -13,5 +14,12 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      background: linear-gradient(90deg, #E69FE8 2.44%, #F391F5 45.96%, #8D79DF 96.34%);
     }
+};
+
+.remove-icon {
+  position: absolute;
+  top: 3%;
+  left: 92%;
 }

@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfo, faTrash } from "@fortawesome/free-solid-svg-icons";
 import './Client.scss';
 
-const Client = ({ id, client }, props) => {
+const Client = ({ id, client, deleteClient }, props) => {
     const { firstName, lastName, phoneNumber } = client;
     return (
         <div className="client">
@@ -28,7 +28,7 @@ const Client = ({ id, client }, props) => {
                         <FontAwesomeIcon icon={faInfo} size="lg" />
                     </Button>
                 </Link>
-                <Button variant="secondary">
+                <Button handleClick={deleteClient} variant="secondary" id={id}>
                     <FontAwesomeIcon icon={faTrash} size="lg" />
                 </Button>
             </div>

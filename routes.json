@@ -1,0 +1,3 @@
+{
+    "/clients/:id/:visits": "/clients/:id/visits=:visits"
+}

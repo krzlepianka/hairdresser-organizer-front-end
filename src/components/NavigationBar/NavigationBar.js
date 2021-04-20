@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faUserCog, faPowerOff } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faUserCog, faPowerOff, faPlus } from "@fortawesome/free-solid-svg-icons";
 import logo from '../../assets/logo.svg';
 import Button from '../Button/Button';
 import Image from '../Image/Image';
 import Input from '../Input/Input';
 import './Navigation.scss';
 
-const NavigationBar = ({ variant }) => {
+const NavigationBar = ({ variant, showClientAddForm }) => {
     return (
         <>
             <Image variant={variant} src={logo} alt="logo" />
@@ -23,6 +23,13 @@ const NavigationBar = ({ variant }) => {
                     </Button>
                     <Button variant="secondary">
                         <FontAwesomeIcon icon={faPowerOff} />
+                    </Button>
+                    <Button
+                        variant="secondary"
+                        children="Dodaj klienta"
+                        handleClick={showClientAddForm}
+                    >
+                        <FontAwesomeIcon icon={faPlus} />
                     </Button>
                 </div>
             </div>

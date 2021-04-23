@@ -1,12 +1,6 @@
 {
   "clients": [
     {
-      "id": 1,
-      "firstName": "Anna",
-      "lastName": "MARYJEKNA",
-      "phoneNumber": 500660055
-    },
-    {
       "id": "fb786cd-5be8-b62e-a182-570ea4f31b30",
       "firstName": "KRZYSZTOF",
       "lastName": "LEPIANKA",
@@ -22,10 +16,17 @@
   "visits": [
     {
       "id": 1,
-      "title": "odnowa",
-      "description": "lorem ipsum sadadadasd",
-      "date": "15-02-2021",
-      "clientId": 1
+      "title": "kreatyna",
+      "description": "lorem ipsum sadadadasd22",
+      "date": "25-04-1872",
+      "clientId": "fb786cd-5be8-b62e-a182-570ea4f31b30"
+    },
+    {
+      "id": 2,
+      "title": "kreatyna",
+      "description": "lorem ipsum sadadadasd22",
+      "date": "25-04-1872",
+      "clientId": "baa761-ccfc-e67f-7104-f507cf0ccf14"
     }
   ],
   "gallery": [
@@ -42,7 +43,7 @@
     {
       "id": 3,
       "image": "https://post.healthline.com/wp-content/uploads/2020/08/woman_straight_hair-732x549-thumbnail-732x549.jpg",
-      "visitId": 1
+      "visitId": 2
     }
   ]
 }

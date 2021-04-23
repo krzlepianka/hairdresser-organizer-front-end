@@ -9,44 +9,62 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ClientDetails = ({ match }) => {
     const { id } = match.params;
-    const [currentClient, setCurrentClient] = useState();
-    const [currentVisit, setCurrentVisit] = useState();
+    const [currentVisit, setcurrentVisit] = useState();
+    const [visitInformation, setvisitInformation] = useState();
+    const [currentGallery, setCurrentGallery] = useState();
     const [imageVisible, setImageVisible] = useState(false);
     const [currentPhoto, setCurrentPhoto] = useState("");
 
     useEffect(() => {
-        fetchClient();
+        fetchVisit();
+
     }, []);
 
-    const fetchClient = () => {
-        fetch(`http://localhost:9090/clients/${id}`)
-            .then(client => client.json())
-            .then(client => setCurrentClient(client))
+    const fetchVisit = () => {
+        fetch(`http://localhost:9090/clients/${id}/visits`)
+            .then(visit => visit.json())
+            .then(visit => {
+                setcurrentVisit(visit)
+            })
     };
 
     const handleVisit = (e, visit) => {
-        setCurrentVisit(visit);
+        console.log(visit.description)
+        fetch(`http://localhost:9090/visits/${visit.id}/gallery`)
+            .then(gallery => gallery.json())
+            .then(gallery => {
+                setCurrentGallery(gallery);
+                setvisitInformation(visit);
+            })
     };
 
     const deleteVisit = (e, visit) => {
-        fetch(`http://localhost:9090/clients/${id}`,
-            {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-
+        e.stopPropagation();
+        fetch(`http://localhost:9090/visits/${visit.id}?_embed=gallery`, {
+            method: 'DELETE',
+            header: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(res => {
+                fetchVisit();
             })
+    };
+
+    const deleteVisitDescription = (e) => {
+        console.log('click click srt')
     }
 
     const handleImage = (e, photo) => {
         e.preventDefault();
         setImageVisible(true)
         handleCurrentPhoto(photo);
+        console.log(currentGallery)
     };
 
     const handleCurrentPhoto = (photo) => {
-        currentVisit.gallery.find(src => src === photo ? setCurrentPhoto(photo) : '');
+        currentGallery.map(el => el.image === photo.image ? setCurrentPhoto(photo.image) : '');
     };
 
 
@@ -57,12 +75,12 @@ const ClientDetails = ({ match }) => {
     const handleNextImage = () => {
         const photo = currentPhoto;
         let nextPhoto = '';
-        const photoIndex = currentVisit.gallery.findIndex(el => el === photo);
-        if (photoIndex === currentVisit.gallery.length - 1) {
-            nextPhoto = currentVisit.gallery[0];
+        const photoIndex = currentGallery.findIndex(el => el.image == photo);
+        if (photoIndex === currentGallery.length - 1) {
+            nextPhoto = currentGallery[0].image;
         }
         else {
-            nextPhoto = currentVisit.gallery[photoIndex + 1];
+            nextPhoto = currentGallery[photoIndex + 1].image;
         }
         setCurrentPhoto(nextPhoto);
     };
@@ -70,12 +88,12 @@ const ClientDetails = ({ match }) => {
     const handlePreviousImage = () => {
         const photo = currentPhoto;
         let previousPhoto = '';
-        const photoIndex = currentVisit.gallery.findIndex(el => el === photo);
-        if (photo === currentVisit.gallery[0]) {
-            previousPhoto = currentVisit.gallery[currentVisit.gallery.length - 1];
+        const photoIndex = currentGallery.findIndex(el => el.image == photo);
+        if (photo === currentGallery[0].image) {
+            previousPhoto = currentGallery[currentGallery.length - 1].image;
         }
         else {
-            previousPhoto = currentVisit.gallery[photoIndex - 1];
+            previousPhoto = currentGallery[photoIndex - 1].image;
         }
         setCurrentPhoto(previousPhoto);
     }
@@ -87,8 +105,8 @@ const ClientDetails = ({ match }) => {
             <div className="client-visits client-detail">
                 <ul className="client-details-ul">
                     <Header variant="primary">Wizyty</Header>
-                    {currentClient
-                        ? currentClient.visits.map(visit => {
+                    {currentVisit
+                        ? currentVisit.map(visit => {
                             return (
 
                                 <li
@@ -106,13 +124,13 @@ const ClientDetails = ({ match }) => {
             </div>
             <div className="client-visits-details client-detail">
                 <div>
-                    {currentVisit ? <p>{currentVisit.description}</p> : ""}
+                    {visitInformation ? <p>{visitInformation.description}</p> : ""}
                 </div>
             </div>
             <div className="client-visits-galery client-detail">
                 <div>
                     <ul>
-                        {currentVisit ? currentVisit.gallery.map(photo => <img className="client-image" src={photo} onClick={(e) => handleImage(e, photo)} />) : ""}
+                        {currentGallery ? currentGallery.map(photo => <img className="client-image" src={photo.image} onClick={(e) => handleImage(e, photo)} />) : ""}
                     </ul>
                 </div>
             </div>

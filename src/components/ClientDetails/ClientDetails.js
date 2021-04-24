@@ -52,8 +52,28 @@ const ClientDetails = ({ match }) => {
             })
     };
 
-    const deleteVisitDescription = (e) => {
-        console.log('click click srt')
+    const deleteVisitDescription = (e, visit) => {
+        const { id, title, description, date, clientId } = visit;
+        const data = {
+            "title": title,
+            "description": "",
+            "date": date,
+            "clientId": clientId
+        };
+        fetch(`http://localhost:9090/visits/${id}`,
+            {
+                method: 'PUT',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            })
+            .then(res => res.json())
+            .then(res => {
+                fetchVisit()
+                setvisitInformation(res)
+            })
     }
 
     const handleImage = (e, photo) => {
@@ -114,7 +134,7 @@ const ClientDetails = ({ match }) => {
                                     onClick={e => handleVisit(e, visit)}
                                     className="client-visit"
                                 >
-                                    <FontAwesomeIcon onClick={hidePhoto} className="client-button-delete" onClick={e => deleteVisit(e, visit)} icon={faTimes} size="lg" />
+                                    <FontAwesomeIcon className="client-button-delete" onClick={e => deleteVisit(e, visit)} icon={faTimes} size="lg" />
                                     <p className="client-details-p">{visit.title} {visit.date}</p>
                                 </li>
                             )
@@ -124,7 +144,13 @@ const ClientDetails = ({ match }) => {
             </div>
             <div className="client-visits-details client-detail">
                 <div>
-                    {visitInformation ? <p>{visitInformation.description}</p> : ""}
+                    {visitInformation
+                        ?
+                        <p>
+                            <FontAwesomeIcon onClick={e => deleteVisitDescription(e, visitInformation)} className="client-button-delete-description" icon={faTimes} size="lg" />
+                            {visitInformation.description}
+                        </p>
+                        : ""}
                 </div>
             </div>
             <div className="client-visits-galery client-detail">
@@ -132,6 +158,7 @@ const ClientDetails = ({ match }) => {
                     <ul>
                         {currentGallery ? currentGallery.map(photo => <img className="client-image" src={photo.image} onClick={(e) => handleImage(e, photo)} />) : ""}
                     </ul>
+                    <button>Edytuj</button>
                 </div>
             </div>
             <div className={`${imageVisible ? "gallery-show" : "gallery-hide"}`}>
